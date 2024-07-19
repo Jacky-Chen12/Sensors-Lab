@@ -17,8 +17,8 @@ Bookkeeping of all the indoor equipment we have (need 8 completed kits)
 1 ESP with breadboard
 1 ESP with firmware
 5 brand new ESPs
-6 new breadboard
-1 questionable breadboard
+6 new breadboards
+1 untested breadboard
 8 spare indoor sensors
 4 cables to connect the sensor
 2 pre-soldered ones questionable
@@ -30,10 +30,10 @@ Bookkeeping of all the outdoor equipment we have
 2 Purple temp humidity sensors sht3x 
 2 sht3x with unsoldered pinouts
 7 sht41 
-A raw strip of sht41
-6 beat up blue sensors pms7003
+A strip of sht41
+6 beat up blue sensors pms7003 need solderless cables for this as well want standardized cables for clarity
 3 new blue sensors
-4 blue sensors pms5001
+4 blue sensors pms5001 need jst cables that just plug no need to solder
 
 
 Miselious
@@ -43,4 +43,8 @@ Miselious
 
 What I did Week 1
 
-Worked towards creating more 
+Worked towards creating more sensors
+Tuesday last years group came in to show us what they worked up to. Including the set up of the brand new kits to connect to the mothership and view the data via the internet
+Wednesday collaborated to see what we want to change or add to the functionality
+Thursday started building indoor sensors with the parts we already have and keeping tabs on what we are missing so we can order
+Friday organized the lab. Took a comprehensive list of all the 

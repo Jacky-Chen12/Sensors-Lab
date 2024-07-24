@@ -5,7 +5,7 @@ The CO2 sensor (Purple Board with pins)
 The humidity sensor (rectangular block with circle cutout)
 
 The cables coming out of the two sensors will be attached to the ESP mainboard. Note the labels on the mainboard and the CO2 sensor. 
-In this quick guide we will not go over why we put each in which port only the instruction.
+In this quick guide, we will not go over why we put each in which port only the instructions.
 If you want to dive deep into the why please look at the schematic there is a detailed diagram of what each port does.
 
 Cable type:
@@ -28,9 +28,24 @@ Red is not used can snip
 White to 5V
 
 Combined Wires for clarity:
-Some wires have been fused togetherand plugged into one port. Worry not it will still work as intended this was just made to make it easier to plug in and out. 
+Some wires have been fused together and plugged into one port. Worry not it will still work as intended this was just made to make it easier to plug in and out. 
 Blue and Black fused into Right side GND
 SDA and Green to P21
 SCL and Yellow to P22
 
+This marks the completion of the Indoor Sensor. The following part will be for the software aspect and getting the device online.
 
+If you are on location the easiest thing to do will be plugging the now completed Air Quality Sensor into the Linux computer and uploading the program from there. 
+All the set up is already done for you. After uploading the code connect to the 'Autoconnect' wifi. 
+After setting up the autoconnect you will be able to join the connection written into the code this is just for the initial setup.
+Go into the wifi settings to get the ip address. Go to the page and replace the last digit with 1. Put the ip address into the browser and from there be able to view the telemetry.
+
+If you want to upload the code from a personal computer you will have to download Arduino IDE and the libraries noted at the top of the code. Select the ESP32 dev board at the top of the screen
+Some issues might arise like some libraries not showing up in the built-in arduino library manager please download from GitHub and upload zip. Drivers will be needed for sensors 
+are listed in the github.
+
+There are two known issues we have seen occur. There was one where zero usb ports would show up on the computer. We found the root cause of the issue to be from the USB driver on the computer
+after being updated and switching the drivers for the sensor. There are two versions of the Windows driver and switching drivers sometimes helps.
+The second issue was a compliation issue. Where the error message will say "did you mean .ret" instead of what you have now. Find the associated files and change the lines and should clear up the issue.
+
+Now these devices are full fledged air quality sensors.

@@ -1,0 +1,32 @@
+The indoor sensor has 3 parts
+
+The ESP attached to the breadboard with a list of pinouts (Mainboard)
+The CO2 sensor (Purple Board with pins)
+The humidity sensor (rectangular block with circle cutout)
+
+Cable type:
+The CO2 sensor has labeled pins that will require female-to-male jumpers. The color of the cables does not matter please refer to the label to tell you what goes where.
+If you can use red for the VDD and brown for ground, the two remaining ports are for signal and can be whichever you have handy. 
+The humidity sensor has a connector that only goes one way. The colors do matter as they are standardized for every humidity sensor. 
+For the remainder of the instructions, the pins of the CO2 sensor will be referred to as the name and the humidity sensor will be color.
+
+Due to the varying size of the pins, it is difficult to get a secure connection. To remedy this we applied solder to cable to increase the size. 
+(Unsure if the solder is needed to complete the circuit will experiment with it last)
+
+Where each cable goes:
+
+CO2:
+VDD to 3V
+GND to left side Ground
+
+Humidity:
+Red is not used can snip
+White to 5V
+
+Combined Wires for clarity:
+Some wires have been fused togetherand plugged into one port. Worry not it will still work as intended this was just made to make it easier to plug in and out. 
+Blue and Black fused into Right side GND
+SDA and Green to P21
+SCL and Yellow to P22
+
+

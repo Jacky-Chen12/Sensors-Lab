@@ -4,6 +4,10 @@ The ESP attached to the breadboard with a list of pinouts (Mainboard)
 The CO2 sensor (Purple Board with pins)
 The humidity sensor (rectangular block with circle cutout)
 
+The cables coming out of the two sensors will be attached to the ESP mainboard. Note the labels on the mainboard and the CO2 sensor. 
+In this quick guide we will not go over why we put each in which port only the instruction.
+If you want to dive deep into the why please look at the schematic there is a detailed diagram of what each port does.
+
 Cable type:
 The CO2 sensor has labeled pins that will require female-to-male jumpers. The color of the cables does not matter please refer to the label to tell you what goes where.
 If you can use red for the VDD and brown for ground, the two remaining ports are for signal and can be whichever you have handy. 

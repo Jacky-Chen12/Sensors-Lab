@@ -398,40 +398,71 @@ String processor(const String& var){
 }
 
 
-void setup(){
-// Connect to Wi-Fi
+#include <WiFi.h>
+#include <WiFiManager.h>
+
+// Replace with your network credentials
+const char* soft_ap_ssid = "AutoConnectAP";
+const char* soft_ap_password = "password";
+
+// Callback function when AP mode is entered
+void configModeCallback (WiFiManager *myWiFiManager) {
+  Serial.println("Entered config mode");
+  Serial.println(WiFi.softAPIP());
+  Serial.println(myWiFiManager->getConfigPortalSSID());
+}
+
+void printAndBuffer(String message, bool newline = true) {
+  Serial.print(message);
+  if (newline) {
+    Serial.println();
+  }
+}
+
+void setup() {
+  // Connect to Wi-Fi
   WiFi.mode(WIFI_AP_STA);
   Serial.begin(115200);
-printAndBuffer("To connect to the WiFi network, follow these steps:");
-printAndBuffer("1. Open your device's WiFi settings.");
-printAndBuffer("2. Look for a network named 'AutoConnectAP'.");
-printAndBuffer("3. Connect to 'AutoConnectAP'. If it's password-protected, use 'password' as the password.");
-printAndBuffer("4. Wait until your device indicates that it has connected to the network.");
-printAndBuffer("5. Once connected, enter the following address in a web browser: http://192.168.1.218/");
 
-  // WiFiManager, Local intialization. Once its business is done, there is no need to keep it around
-WiFiManager wm;
+  printAndBuffer("To connect to the WiFi network, follow these steps:");
+  printAndBuffer("1. Open your device's WiFi settings.");
+  printAndBuffer("2. Look for a network named 'AutoConnectAP'.");
+  printAndBuffer("3. Connect to 'AutoConnectAP'. If it's password-protected, use 'password' as the password.");
+  printAndBuffer("4. Wait until your device indicates that it has connected to the network.");
+  printAndBuffer("5. Once connected, enter the following address in a web browser: http://192.168.1.218/");
 
-  bool res;
+  // WiFiManager, Local initialization. Once its business is done, there is no need to keep it around
+  WiFiManager wm;
 
-  res = wm.autoConnect("AutoConnectAP","password"); // password protected ap
+  // Set callback that gets called when connecting to AP mode
+  wm.setAPCallback(configModeCallback);
 
-  if(!res) {
+  // Try to connect to WiFi
+  bool res = wm.autoConnect();
+
+  if (!res) {
     printAndBuffer("Failed to connect");
     // ESP.restart();
-  } 
-  else {
-    //if you get here you have connected to the WiFi    
+  } else {
+    // if you get here you have connected to the WiFi
     printAndBuffer("connected...yeey :)");
   }
+
   WiFi.softAP(soft_ap_ssid, soft_ap_password);
-  //start sensors
+
+  // Start sensors
   printAndBuffer("ESP32 IP as soft AP: ");
   printAndBuffer(WiFi.softAPIP().toString());
 
-printAndBuffer("Local network server:");
-printAndBuffer("http://",false);
-printAndBuffer(WiFi.localIP().toString());
+  printAndBuffer("Local network server:");
+  printAndBuffer("http://", false);
+  printAndBuffer(WiFi.localIP().toString());
+}
+
+void loop() {
+  // Your loop code here
+}
+
 
 //begin sensors
 

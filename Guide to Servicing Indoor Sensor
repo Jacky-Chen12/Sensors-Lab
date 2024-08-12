@@ -8,6 +8,10 @@ The cables coming out of the two sensors will be attached to the ESP mainboard. 
 In this quick guide, we will not go over why we put each in which port only the instructions.
 If you want to dive deep into the why please look at the schematic there is a detailed diagram of what each port does.
 
+The humidity sensor will come preassembled without the need to solder. The CO2 sensors will require some soldering out of the package.
+Please when soldering note the orientation of the pins. In the examples that we produced, we have the short ends sticking out where the CO2 sensor is.
+While the longer end (where the jumper cables will be connected to) are facing out of the back. 
+
 Cable type:
 The CO2 sensor has labeled pins that will require female-to-male jumpers. The color of the cables does not matter please refer to the label to tell you what goes where.
 If you can use red for the VDD and brown for ground, the two remaining ports are for signal and can be whichever you have handy. 
@@ -50,3 +54,11 @@ after being updated and switching the drivers for the sensor. There are two vers
 The second issue was a compliation issue. Where the error message will say "did you mean .ret" instead of what you have now. Find the associated files and change the lines and should clear up the issue.
 
 Now these devices are full fledged air quality sensors.
+
+
+Mounting the build to the box:
+We have found 4x 5/8 screws from the near by hardware store to be the best fit for the ESP32 mounting. Try your best to line up the posts on
+the breakout board to the holes on the boxes. Use a little bit of foam or a washer to create seperation between the bottom of the board and the box.
+
+With the Esp32 securely mounted we will move onto the 2 sensors. 
+Please follow the premade fab when when working with the sensors. Pay attention to the sizing of the cuts. 

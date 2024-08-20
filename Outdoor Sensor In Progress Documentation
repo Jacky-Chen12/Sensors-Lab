@@ -15,6 +15,33 @@ Solar Panel
 
 Steps:
 
-Create the Power Delivery System
+Create the Power Delivery System:
 The Step up board will have two terminals B+ and B- solder the positive end of the battery (red) and ground (black) to the respective ports
 The micro usb port will be the input for the solar panel to give power for daytime usage
+The regular usb port will output to the ESP32
+
+Next is connecting the Two sensors SHT and BME: 
+As noted before the SHT is not labeled with the pinsout however they are the same order as
+the PMS. So that can be used as a guild. 
+In an upright orientation the SHT sensor on the bottom and the pinouts up and back the order from left to right is:
+SDA SCL GND PWR
+To make the cable management easier please joint solder the SDA, SCL, GND, PWR together on the BME and SHT. Cutting the total wires from 8
+to 4
+The SDA will be connected to P21, SCL to P22, PWR to 3V, GND to any ground pin but the left works the best for neatness.
+
+PMS5003:
+They work the same as the 7003 but much more difficult to solder a usable jumper wire onto the port.
+The 5003 will have a perpritory cable. Cut the cable in half and solder on extensions to each end. Pay attention to the data sheet as 2 cables
+are not used and will not need extension cables. 
+Once the extension wire are completed from left to right the pinouts are 
+DNC DNC P25 P16 P17 P26 GND 5V
+
+Once all sensors are connected please upload the Webserver Outdoor File.
+Note that an error will be spit out if not all of the sensors are connected and working. In that case please double check wiring and if sensor
+is shorted.
+
+If the upload is cleared then you can set up the ESP like the Indoor sensors with AutoConnect.
+Joining the ecolibrium wifi 
+
+
+

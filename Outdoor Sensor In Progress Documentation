@@ -1,3 +1,20 @@
-The outdoor sensor is a work in progress. 
+The outdoor sensor is a work in progress. The nice to haves are the parts we are still working on however the core functionality. 
+We still want a way to measure the battery charge on the battery (100% charge gives a 6 hour run time)
 
-It is made up of 4 total sensors. Currently when everything is attached using the same principle as the Indoor Sensor the 
+It is made up of 3 total sensors. Currently when everything is attached using the same principle as the Indoor Sensor. Where the cables with 
+shared ports will be soldered together into 1 cable to reduce the mess.
+
+Parts:
+ESP32 and Breakout board
+PMS5003
+BME280
+SHT41 (Will not have labels please note orientation of board and sensor)
+Rechargeable lithium battery
+5V Step Up Board
+Solar Panel 
+
+Steps:
+
+Create the Power Delivery System
+The Step up board will have two terminals B+ and B- solder the positive end of the battery (red) and ground (black) to the respective ports
+The micro usb port will be the input for the solar panel to give power for daytime usage

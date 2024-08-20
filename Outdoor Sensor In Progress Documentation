@@ -41,7 +41,7 @@ Note that an error will be spit out if not all of the sensors are connected and 
 is shorted.
 
 If the upload is cleared then you can set up the ESP like the Indoor sensors with AutoConnect.
-Joining the ecolibrium wifi 
+Joining the ecolibrium wifi connect to the IP of the ESP in your web browser. All telemetry info should pop up. 
 
 
 
